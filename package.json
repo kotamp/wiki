@@ -1,0 +1,26 @@
+{
+  "name": "wiki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotamp/wiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kotamp/wiki/issues"
+  },
+  "homepage": "https://github.com/kotamp/wiki#readme",
+  "devDependencies": {
+    "coffeescript": "^2.5.1",
+    "gulp": "^4.0.2",
+    "gulp-coffee": "^3.0.3",
+    "gulp-markdown": "^5.0.1"
+  }
+}
