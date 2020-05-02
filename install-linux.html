@@ -1,0 +1,79 @@
+sudo su
+ifconfig
+wpa_supplicant -B -i <interface> -c <(wpa_passphrase "ssid" "password")
+
+dhcpcd
+
+fdisk -l
+lsblk
+
+fdisk /dev/sdx
+
++ help fdisk
++ gpt codes
++ mbr codes
+
+mkfs.f2fs -l mylabel /dev/sdxY
+mkfs.ext4 -L mylabel /dev/sdxY
+mkswap -L swap /dev/sdxY
+
+UEFI only - first partition:
+mkfs.fat -F 32 -n BOOT /dev/sdxY
+
+
+mount /dev/disk/by-label/mylabel /mnt
+UEFI: mkdir /mnt/boot
+UEFI: mount /dev/disk/by-label/BOOT /mnt/boot
+
+swapon /dev/sdxY
+
+https://www.archlinux.org/packages/extra/any/archboot/
+https://www.archlinux.org/packages/core/any/base/
+
+
+archlinux:
+pacstrap /mnt base linux linux-firmware wpa_supplicant f2fs-tools dhcpcd vim-minimal
+which
+man-db man-pages texinfo
+
+# genfstab -L /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+pacman -S <packages...>
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+
+
+hwclock --systohc
+
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+locale-gen
+
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+man vconsole.conf
+vim vconsole.conf
+
+echo "myhostname" > /etc/hostname
+
+man hosts(5)
+vim /etc/hosts
+
+127.0.0.1 localhost
+::1       localhost
+127.0.1.1 myhostname.localdomain myhostname
+
+# passwd
+
+UEFI: installing grub
+UEFI: pacman -Su grub efibootmgr
+UEFI: mount /dev/disk/by-label/BOOT /mnt/boot
+UEFI: grub-install --target=x86_64-efi(or i386-efi) --efi-directory=/mnt/boot --bootloader-id=GRUB
+
+vim /etc/default/grub
+vim /etc/grub.d/
+
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+
+reboot
+
+congrats :)
