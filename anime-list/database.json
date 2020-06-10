@@ -1,16 +1,41 @@
 {
   "to-watch": [
     {
-      "name": "Kinmoza!",
-      "poster": "https://artworks.thetvdb.com/banners/posters/269872-1.jpg",
+      "name": "きんいろモザイク",
+      "poster": "001.jpg",
       "anidb": "https://anidb.net/anime/9579"
     }
   ],
   "watched": [
     {
       "name": "干物妹！うまるちゃん",
-      "poster": "https://artworks.thetvdb.com/banners/posters/293121-3.jpg",
+      "poster": "002.jpg",
       "anidb": "https://anidb.net/anime/10972"
+    },
+    {
+      "name": "干物妹! うまるちゃんR",
+      "poster": "003.jpg",
+      "anidb": "https://anidb.net/anime/13106"
+    },
+    {
+      "name": "ジョジョの奇妙な冒険 黄金の風",
+      "poster": "004.jpg",
+      "anidb": "https://anidb.net/anime/14173"
+    },
+    {
+      "name": "小林さんちのメイドラゴン",
+      "poster": "005.jpg",
+      "anidb": "https://anidb.net/anime/12091"
+    },
+    {
+      "name": "けいおん!",
+      "poster": "006.jpg",
+      "anidb": "https://anidb.net/anime/6257"
+    },
+    {
+      "name": "ワンパンマン",
+      "poster": "007.jpg",
+      "anidb": "https://anidb.net/anime/11123"
     }
   ]
 }

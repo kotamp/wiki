@@ -15,10 +15,10 @@
     img.setAttribute("alt", name);
 
     let newImage = new Image;
-    newImage.onload = function() {
+    newImage.addEventListener("load", function(){
       img.src = this.src;
-    };
-    newImage.src = poster;
+    });
+    newImage.src = "./images/" + poster;
 
     let title = elem('div');
     title.setAttribute('class', 'title');
